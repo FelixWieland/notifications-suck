@@ -18,7 +18,11 @@ var notifications = []Notification{}
 func main() {
 	port := os.Getenv("PORT")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World"))
+		w.Write([]byte(`
+		/create?message=MYMESSAGE  	-- creates a notification
+		/all				-- returns all created notifications
+		/from?from=UNIXTIMESTAMP  	-- returns all created notifications after given timestamp
+		`))
 	})
 
 	http.HandleFunc("/create", func(w http.ResponseWriter, r *http.Request) {
