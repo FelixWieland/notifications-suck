@@ -1,0 +1,6 @@
+package com.example.notificationsclient
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
